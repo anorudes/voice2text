@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice2text"
+version = "1.0.0"
+description = "Hotkey-activated voice transcription tool using OpenRouter API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Author", email = "author@example.com"},
+]
+keywords = ["voice", "transcription", "speech-to-text", "openrouter", "hotkey"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "pynput>=1.7.6",
+    "pyperclip>=1.9.0",
+    "sounddevice>=0.5.0",
+    "soundfile>=0.12.1",
+    "numpy>=1.26.0",
+    "requests>=2.31.0",
+    "pydub>=0.25.1",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+voice2text = "voice2text:main"
+
+[project.urls]
+Homepage = "https://github.com/anoru/voice2text"
+Repository = "https://github.com/anoru/voice2text"
+Issues = "https://github.com/anoru/voice2text/issues"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "D", "UP", "B", "C4", "SIM"]
+ignore = ["D100", "D104", "D107", "D203", "D213", "E402"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
